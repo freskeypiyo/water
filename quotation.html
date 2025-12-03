@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quotation | FreskeyPiyo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-box"><a href="index.html"><span class="logo-freskey">Freskey</span><span class="logo-piyo">piyo</span></a></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="quotation.html" class="active-page">Custom Orders</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="hamburger"><i class="fas fa-bars"></i></div>
+    </nav>
+    <div class="mobile-nav"></div>
+
+    <div class="hero-page" style="background-image: url('https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=1920&q=80');">
+        <h1>Make It Personal</h1>
+    </div>
+
+    <section class="section-padding">
+        <div class="section-title-box">
+            <h2>Weddings & Corporate Events</h2>
+            <p>Get water bottles with your names, logos, and dates printed.</p>
+        </div>
+
+        <div style="text-align:center; padding:30px; border:2px dashed var(--accent-red); margin-bottom:40px;">
+            <i class="fas fa-heart" style="color:var(--accent-red); font-size:30px;"></i>
+            <h3 style="font-family:'Great Vibes'; font-size:40px;">Rohit & Anjali</h3>
+            <p>12.12.2024</p>
+            <p><em>(Example of how your label could look)</em></p>
+        </div>
+
+        <div class="form-container">
+            <h3>Request Price Quote</h3>
+            <form>
+                <div class="form-group"><label>Your Name</label><input type="text" class="form-control"></div>
+                <div class="form-group"><label>Event Type</label>
+                    <select class="form-control">
+                        <option>Wedding / Marriage</option>
+                        <option>Birthday Party</option>
+                        <option>Corporate Event</option>
+                    </select>
+                </div>
+                <div class="form-group"><label>Quantity Needed (Bottles)</label><input type="number" class="form-control"></div>
+                <div class="form-group"><label>Custom Text Needed?</label><input type="text" class="form-control" placeholder="e.g. Arpit weds Priya"></div>
+                <button type="button" class="btn btn-accent" style="width:100%;" onclick="alert('Quotation Request Sent!')">Get Quote</button>
+            </form>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
