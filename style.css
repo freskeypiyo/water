@@ -1,0 +1,154 @@
+/* =========================================
+   FRESKEY PIYO - MAIN STYLESHEET
+   ========================================= */
+
+/* --- 1. FONTS & VARIABLES --- */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700;800;900&family=Oswald:wght@300;400;500;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+:root {
+    --primary-blue: #006994;   /* Ocean Deep */
+    --primary-light: #4ea8de;  /* Sky Blue */
+    --primary-dark: #003049;   /* Night Blue */
+    --accent-red: #ff4757;     /* For 'Piyo' */
+    --accent-green: #2ecc71;   /* Success/Green */
+    
+    --white: #ffffff;
+    --off-white: #f8f9fa;
+    --text-dark: #333333;
+    --text-grey: #666666;
+    
+    --shadow: 0 5px 15px rgba(0,0,0,0.1);
+    --border-radius: 8px;
+    --transition: all 0.3s ease;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+html { scroll-behavior: smooth; }
+body { background: var(--off-white); color: var(--text-dark); overflow-x: hidden; line-height: 1.6; }
+
+a { text-decoration: none; color: inherit; transition: var(--transition); }
+ul { list-style: none; }
+h1, h2, h3, h4, h5 { font-family: 'Oswald', sans-serif; text-transform: uppercase; color: var(--primary-dark); }
+
+/* --- 2. PRELOADER / SPLASH SCREEN --- */
+#splash-screen {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+    background: var(--white); z-index: 9999;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    transition: opacity 0.5s ease-out;
+}
+.drop-anim { font-size: 3rem; color: var(--primary-blue); animation: bounce 1s infinite alternate; }
+@keyframes bounce { from { transform: translateY(0); } to { transform: translateY(-20px); } }
+
+/* --- 3. LOGO STYLING --- */
+.logo-box { position: relative; display: inline-block; cursor: pointer; padding-right: 15px; }
+.logo-freskey { font-family: 'Oswald', sans-serif; font-weight: 800; font-size: 28px; color: var(--primary-blue); }
+.logo-piyo { position: absolute; bottom: -5px; right: 0; font-family: 'Great Vibes', cursive; font-size: 24px; color: var(--accent-red); transform: rotate(-5deg); text-transform: none;}
+
+/* --- 4. NAVIGATION BAR --- */
+.navbar {
+    background: var(--white); height: 80px; width: 100%;
+    box-shadow: var(--shadow); position: sticky; top: 0; z-index: 1000;
+    display: flex; justify-content: space-between; align-items: center; padding: 0 5%;
+}
+
+.nav-links { display: flex; gap: 20px; }
+.nav-links li a { font-weight: 600; font-size: 14px; text-transform: uppercase; position: relative; }
+.nav-links li a:hover { color: var(--primary-blue); }
+.nav-links li a.active-page { color: var(--primary-blue); }
+.nav-links li a.active-page::after {
+    content: ''; position: absolute; width: 100%; height: 2px;
+    background: var(--primary-blue); bottom: -5px; left: 0;
+}
+
+/* Hamburger */
+.hamburger { display: none; font-size: 24px; cursor: pointer; }
+
+/* Mobile Menu */
+.mobile-nav {
+    position: fixed; right: -100%; top: 0; width: 70%; height: 100%;
+    background: var(--white); box-shadow: -5px 0 10px rgba(0,0,0,0.1);
+    z-index: 1001; padding: 60px 30px; transition: 0.4s ease; display: flex; flex-direction: column; gap: 20px;
+}
+.mobile-nav.active { right: 0; }
+.mobile-nav a { font-size: 18px; font-weight: 600; border-bottom: 1px solid #eee; padding-bottom: 10px;}
+.close-btn { position: absolute; top: 20px; right: 20px; font-size: 30px; cursor: pointer;}
+
+/* --- 5. COMMON SECTIONS --- */
+.hero-page {
+    height: 40vh;
+    background: linear-gradient(rgba(0,48,73,0.7), rgba(0,48,73,0.7)), url('https://images.unsplash.com/photo-1523362628408-255d49dc5ae8?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover; background-position: center;
+    display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white);
+}
+.hero-page h1 { color: var(--white); font-size: 3rem; margin-bottom: 10px; }
+.section-padding { padding: 60px 10%; }
+
+.section-title-box { text-align: center; margin-bottom: 50px; }
+.section-title-box h2 { font-size: 2.5rem; margin-bottom: 15px; position: relative; display: inline-block;}
+.section-title-box h2::after { content: ''; display: block; width: 60%; height: 4px; background: var(--accent-red); margin: 5px auto 0; border-radius: 2px;}
+
+.btn { padding: 12px 25px; border-radius: 50px; border: none; font-weight: 700; cursor: pointer; display: inline-block;}
+.btn-primary { background: var(--primary-blue); color: white; }
+.btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); }
+.btn-accent { background: var(--accent-red); color: white; }
+.btn-accent:hover { background: #e63e4c; transform: translateY(-2px); }
+
+/* --- 6. HOME PAGE SPECIFIC --- */
+.main-hero {
+    height: 90vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1563273941-86a074c53d4c?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover; background-position: center;
+    display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center;
+}
+.main-hero h1 { font-size: 4rem; line-height: 1.2; text-shadow: 2px 2px 8px rgba(0,0,0,0.6); }
+
+/* --- 7. BOTTLE CSS SHAPES (IMPORTANT) --- */
+.bottle-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; margin-top: 30px; }
+.product-card { background: white; padding: 20px; border-radius: 10px; box-shadow: var(--shadow); text-align: center; transition: 0.3s; }
+.product-card:hover { transform: translateY(-10px); }
+
+.css-bottle-sq {
+    position: relative; margin: 0 auto 20px; background: linear-gradient(135deg, #dcf5ff 0%, #64c8ff 100%);
+    border: 2px solid rgba(0, 105, 148, 0.2); border-radius: 6px; box-shadow: inset 3px 0 6px white, 5px 5px 15px rgba(0,0,0,0.1);
+}
+.bottle-cap {
+    width: 40%; height: 10px; background: var(--primary-blue); margin: -10px auto 0;
+    border-radius: 2px 2px 0 0; position: relative; top: -2px;
+}
+.bottle-label {
+    position: absolute; top: 30%; left: 2px; right: 2px; height: 35%; background: rgba(255,255,255,0.85);
+    display: flex; flex-direction: column; justify-content: center; align-items: center; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;
+}
+.label-main { font-family: 'Oswald'; color: var(--primary-blue); font-weight: 700; font-size: 0.8rem; }
+.label-sub { font-family: 'Great Vibes'; color: var(--accent-red); font-size: 0.9rem; margin-top: -5px;}
+
+/* --- 8. FORMS --- */
+.form-container { max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: var(--shadow); }
+.form-group { margin-bottom: 20px; text-align: left; }
+.form-group label { font-weight: 600; display: block; margin-bottom: 5px; }
+.form-control { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 5px; outline: none; transition: 0.3s; }
+.form-control:focus { border-color: var(--primary-blue); }
+
+/* --- 9. FOUNDERS CARDS --- */
+.founders-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
+.founder-card { width: 300px; background: white; padding: 25px; border-radius: 10px; text-align: center; box-shadow: var(--shadow); }
+.founder-img { width: 100px; height: 100px; background: #ddd; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 40px; color: var(--primary-light);}
+
+/* --- 10. FOOTER --- */
+footer { background: #222; color: #aaa; padding: 40px 10%; }
+.footer-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; padding-bottom: 20px; border-bottom: 1px solid #444; }
+.footer-col h4 { color: white; margin-bottom: 20px; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul li a:hover { color: var(--primary-light); padding-left: 5px; }
+.copyright { text-align: center; margin-top: 20px; font-size: 14px; }
+
+/* Responsive */
+@media(max-width: 768px) {
+    .nav-links { display: none; }
+    .hamburger { display: block; }
+    .main-hero h1 { font-size: 2.5rem; }
+    .hero-page { height: 30vh; }
+    .hero-page h1 { font-size: 2rem; }
+}
