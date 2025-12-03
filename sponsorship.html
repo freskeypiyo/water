@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sponsorship | FreskeyPiyo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar HTML Code -->
+    <nav class="navbar">
+        <div class="logo-box"><a href="index.html"><span class="logo-freskey">Freskey</span><span class="logo-piyo">piyo</span></a></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="sponsorship.html" class="active-page">Events</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="hamburger"><i class="fas fa-bars"></i></div>
+    </nav>
+    <div class="mobile-nav"></div>
+
+    <div class="hero-page" style="background-image: url('https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1920&q=80');">
+        <h1>Collaborate With Us</h1>
+    </div>
+
+    <section class="section-padding">
+        <div class="section-title-box">
+            <h2>We Sponsor Events</h2>
+            <p>Organizing a college fest, marathon, or charity event in UP/Uttarakhand?</p>
+        </div>
+
+        <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:50px; align-items:center;">
+            <div style="flex:1; max-width:500px;">
+                <h3>Why Partner with FreskeyPiyo?</h3>
+                <ul style="margin-top:20px; line-height:2;">
+                    <li><i class="fas fa-check" style="color:green;"></i> Free or Discounted Hydration stations.</li>
+                    <li><i class="fas fa-check" style="color:green;"></i> Co-branding opportunities.</li>
+                    <li><i class="fas fa-check" style="color:green;"></i> Shoutout on our Social Media.</li>
+                </ul>
+            </div>
+            
+            <div class="form-container">
+                <h3 style="text-align:center; margin-bottom:20px;">Sponsorship Request</h3>
+                <form>
+                    <div class="form-group"><label>Event Name</label><input type="text" class="form-control" required></div>
+                    <div class="form-group"><label>Organizer Name</label><input type="text" class="form-control" required></div>
+                    <div class="form-group"><label>Event Date</label><input type="date" class="form-control"></div>
+                    <div class="form-group"><label>Expected Footfall</label><input type="number" class="form-control"></div>
+                    <div class="form-group"><label>Venue (City)</label><input type="text" class="form-control"></div>
+                    <button type="button" class="btn btn-primary" onclick="alert('Proposal sent! We will contact you.')">Submit Proposal</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
