@@ -648,7 +648,25 @@
                         </div>
                       <div class="hero-image-wrapper fade-in" style="transition-delay: 0.2s;">
                             <!-- CSS Drawn Bottle -->
-                            <img src="https://github.com/freskeypiyo/water/blob/main/1000ml.png?raw=true" alt="1000ml label / image">
+                           <img src="https://github.com/freskeypiyo/water/blob/main/1000ml.png?raw=true" 
+     alt="1000ml label / image"
+     style="
+       width:200px;
+       animation:wave 3s ease-in-out infinite;
+       display:block;
+       margin:auto;
+     ">
+
+<style>
+@keyframes wave {
+  0%   { transform: translateY(0px) rotate(0deg); }
+  25%  { transform: translateY(-8px) rotate(1deg); }
+  50%  { transform: translateY(0px) rotate(0deg); }
+  75%  { transform: translateY(-8px) rotate(-1deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+</style>
+
                         </div>
                     </div>
                 </div>
