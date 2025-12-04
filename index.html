@@ -645,11 +645,22 @@
                                 <button onclick="route('b2b')" class="btn" style="background:transparent; color:var(--primary);">For Hotels</button>
                             </div>
                         </div>
-                        <div class="hero-image-wrapper fade-in" style="transition-delay: 0.2s; margin-top: 74px;">
-                            <!-- CSS Drawn Bottle -->
-                            <img src="https://github.com/freskeypiyo/water/blob/main/1000ml.png?raw=true" alt="1000ml label / image">
-                        </div>
-                    </div>
+                       <!-- Add the keyframes definition in a <style> block -->
+<style>
+@keyframes floatUpDown {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+</style>
+
+<!-- Apply the animation inline to your element -->
+<div class="hero-image-wrapper fade-in visible" 
+     style="transition-delay:0.2s; margin-top:74px; animation: floatUpDown 3s ease-in-out infinite;">
+  <img src="https://github.com/freskeypiyo/water/blob/main/1000ml.png?raw=true" 
+       alt="1000ml label / image">
+</div>
+
                 </div>
             </div>
 
