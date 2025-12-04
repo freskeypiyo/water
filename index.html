@@ -1254,28 +1254,48 @@ function handleSubmitOrder(e) {
 
     const phone = "917017251402";
 
-    // Get form values
+    // User details
     const name = document.getElementById('orderName').value.trim();
     const address = document.getElementById('orderAddress').value.trim();
     const customMessage = document.querySelector('textarea:not(#orderAddress)').value.trim();
 
-    // Get selected products
-    const products = Array.from(document.querySelectorAll("input[name='prod']:checked"))
-        .map(p => p.value);
+    // Collect selected products from dropdowns
+    const productSelects = document.querySelectorAll("select[name]");
+    const products = [];
 
-    const productList = products.length > 0 ? products.join(", ") : "No products selected";
+    productSelects.forEach(select => {
+        const qty = parseInt(select.value, 10);
+        const productName = select.getAttribute("name");
 
-    // Final message for WhatsApp
+        if (qty >= 7) {
+            products.push(`${productName} – ${qty} Boxes`);
+        }
+    });
+
+    // Custom Product
+    const customProduct = document.querySelector("input[name='customProduct']").value.trim();
+    const customQty = parseInt(document.querySelector("input[name='customQty']").value, 10);
+
+    if (customProduct && customQty >= 7) {
+        products.push(`${customProduct} – ${customQty} Boxes`);
+    }
+
+    // If nothing selected → don't show "No products selected"
+    const productList = products.length > 0 
+        ? products.join("\n") 
+        : "Customer did not select specific products yet.";
+
+    // WhatsApp Message
     const msg =
-`New Order Request:
+`🧾 New Order Request:
 ------------------------
-Name: ${name}
-Address: ${address}
+👤 Name: ${name}
+📍 Address: ${address}
 
-Products Selected:
+📦 Products:
 ${productList}
 
-Customer Message:
+📝 Note:
 ${customMessage || "N/A"}
 ------------------------
 Please confirm the order.`;
