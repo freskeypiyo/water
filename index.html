@@ -395,25 +395,7 @@
             margin-top: 40px;
         }
 
-        .product-card img {
-    width: 100%;
-    height: 200px; /* FIXED SIZE */
-    object-fit: contain; /* Prevent stretch & crop */
-    display: block;
-    margin: 0 auto 10px;
-}
-
-.product-card {
-    transition: opacity 0.3s ease-in-out;
-}
-
-.product-card.hidden {
-    opacity: 0;
-    pointer-events: none;
-    position: absolute;
-}
-
-        
+           
         .step-bubble {
             width: 120px;
             height: 120px;
@@ -813,140 +795,23 @@
        
 
         <!-- SECTION: SHOP -->
-<section id="shop" class="shop-section">
-    <div class="container">
-        <div class="shop-header">
-            <h1>Our Collection</h1>
-            <p>Select from our range of square-packaged hydration solutions.</p>
-        </div>
-
-        <div class="filter-controls">
-            <button class="filter-btn active" onclick="filterShop('all')">All</button>
-            <button class="filter-btn" onclick="filterShop('mineral')">Natural Mineral</button>
-            <button class="filter-btn" onclick="filterShop('drinking')">Packaged Drinking</button>
-            <button class="filter-btn" onclick="filterShop('alkaline')">Alkaline Gold</button>
-        </div>
-
-        <div class="shop-grid" id="productGrid">
-            <!-- Natural Mineral Water -->
-            <div class="product-card" data-type="mineral">
-                <img src="https://github.com/freskeypiyo/water/blob/main/500ml.png?raw=true" alt="200ml Mineral" loading="lazy">
-                <div class="tag-badge">MINERAL</div>
-                <h4 class="product-title">Natural Mineral Water</h4>
-                <p class="product-size">200ml Square Bottle</p>
-                <span class="price">₹5</span>
-                <p class="product-desc">Perfect for quick meetings.</p>
+ <section id="shop" class="page-section hidden section-padding">
+            <div class="container">
+                <div class="text-center">
+                    <h1>Our Collection</h1>
+                    <p>Select from our range of square-packaged hydration solutions.</p>
+                    <div class="filter-controls">
+                        <button class="filter-btn active" onclick="filterShop('all')">All</button>
+                        <button class="filter-btn" onclick="filterShop('mineral')">Natural Mineral</button>
+                        <button class="filter-btn" onclick="filterShop('drinking')">Packaged Drinking</button>
+                        <button class="filter-btn" onclick="filterShop('alkaline')">Alkaline Gold</button>
+                    </div>
+                </div>
+                <div id="productGrid" class="shop-grid">
+                    <!-- Products Injected Via JS -->
+                </div>
             </div>
-
-            <div class="product-card" data-type="mineral">
-                <img src="https://github.com/freskeypiyo/water/blob/main/500ml.png?raw=true" alt="500ml Mineral" loading="lazy">
-                <div class="tag-badge">MINERAL</div>
-                <h4 class="product-title">Natural Mineral Water</h4>
-                <p class="product-size">500ml Square Bottle</p>
-                <span class="price">₹10</span>
-                <p class="product-desc">The standard on-the-go refresher.</p>
-            </div>
-
-            <div class="product-card" data-type="mineral">
-                <img src="https://github.com/freskeypiyo/water/blob/main/1000ml.png?raw=true" alt="1000ml Mineral" loading="lazy">
-                <div class="tag-badge">MINERAL</div>
-                <h4 class="product-title">Natural Mineral Water</h4>
-                <p class="product-size">1000ml Square Bottle</p>
-                <span class="price">₹19</span>
-                <p class="product-desc">Hydration for the whole day.</p>
-            </div>
-
-            <div class="product-card" data-type="mineral">
-                <img src="https://github.com/freskeypiyo/water/blob/main/1000ml.png?raw=true" alt="2L Mineral" loading="lazy">
-                <div class="tag-badge">MINERAL</div>
-                <h4 class="product-title">Natural Mineral Water</h4>
-                <p class="product-size">2 Ltr Square Bottle</p>
-                <span class="price">₹35</span>
-                <p class="product-desc">Family pack for dining.</p>
-            </div>
-
-            <!-- Packaged Drinking Water -->
-            <div class="product-card" data-type="drinking">
-                <img src="https://github.com/freskeypiyo/water/blob/main/500ml.png?raw=true" alt="200ml Drinking" loading="lazy">
-                <h4 class="product-title">Packaged Drinking Water</h4>
-                <p class="product-size">200ml Square Bottle</p>
-                <span class="price">₹5</span>
-                <p class="product-desc">Economy party pack.</p>
-            </div>
-
-            <div class="product-card" data-type="drinking">
-                <img src="https://github.com/freskeypiyo/water/blob/main/500ml.png?raw=true" alt="500ml Drinking" loading="lazy">
-                <h4 class="product-title">Packaged Drinking Water</h4>
-                <p class="product-size">500ml Square Bottle</p>
-                <span class="price">₹10</span>
-                <p class="product-desc">Regular daily use.</p>
-            </div>
-
-            <div class="product-card" data-type="drinking">
-                <img src="https://github.com/freskeypiyo/water/blob/main/1000ml.png?raw=true" alt="1000ml Drinking" loading="lazy">
-                <h4 class="product-title">Packaged Drinking Water</h4>
-                <p class="product-size">1000ml Square Bottle</p>
-                <span class="price">₹19</span>
-                <p class="product-desc">Pure hydration.</p>
-            </div>
-
-            <div class="product-card" data-type="drinking">
-                <img src="https://github.com/freskeypiyo/water/blob/main/1000ml.png?raw=true" alt="2L Drinking" loading="lazy">
-                <h4 class="product-title">Packaged Drinking Water</h4>
-                <p class="product-size">2 Ltr Square Bottle</p>
-                <span class="price">₹35</span>
-                <p class="product-desc">Large volume hydration.</p>
-            </div>
-
-            <!-- Alkaline Gold -->
-            <div class="product-card" data-type="alkaline">
-                <img src="https://github.com/freskeypiyo/water/blob/main/500ml.png?raw=true" alt="500ml Alkaline" loading="lazy">
-                <div class="tag-badge">PREMIUM</div>
-                <h4 class="product-title">Alkaline Gold Premium</h4>
-                <p class="product-size">500ml Square Bottle</p>
-                <span class="price">₹10</span>
-                <p class="product-desc">pH 8.5+ with Gold dust infusion.</p>
-            </div>
-
-            <div class="product-card" data-type="alkaline">
-                <img src="https://github.com/freskeypiyo/water/blob/main/1000ml.png?raw=true" alt="1000ml Alkaline" loading="lazy">
-                <div class="tag-badge">PREMIUM</div>
-                <h4 class="product-title">Alkaline Gold Premium</h4>
-                <p class="product-size">1 Ltr Square Bottle</p>
-                <span class="price">₹19</span>
-                <p class="product-desc">Exclusive luxury edition.</p>
-            </div>
-        </div>
-    </div>
-    <script>
-        function filterShop(category) {
-    const productCards = document.querySelectorAll('.product-card');
-    const filterBtns = document.querySelectorAll('.filter-btn');
-
-    // Update active button
-    filterBtns.forEach(btn => btn.classList.remove('active'));
-    event.target.classList.add('active');
-
-    // Filter products with animation
-    productCards.forEach(card => {
-        const shouldShow = category === 'all' || card.getAttribute('data-type') === category;
-
-        if (shouldShow) {
-            card.classList.remove('hidden');
-            setTimeout(() => {
-                card.style.opacity = '1';
-            }, 10);
-        } else {
-            card.style.opacity = '0';
-            setTimeout(() => {
-                card.classList.add('hidden');
-            }, 300);
-        }
-    });
-}
-
-    </script>
-</section>
+        </section>
 
 
         <!-- SECTION: B2B -->
@@ -1115,7 +980,24 @@
         // =======================
         // DATA MODEL
         // =======================
-       
+
+        const products = [
+            // Natural Mineral Water
+            { id: 1, name: "Natural Mineral Water", size: "200ml", type: "mineral", img: "fas fa-wine-bottle", desc: "Perfect for quick meetings.", cat: "mineral" },
+            { id: 2, name: "Natural Mineral Water", size: "500ml", type: "mineral", img: "fas fa-wine-bottle", desc: "The standard on-the-go refresher.", cat: "mineral" },
+            { id: 3, name: "Natural Mineral Water", size: "1000ml", type: "mineral", img: "fas fa-wine-bottle", desc: "Hydration for the whole day.", cat: "mineral" },
+            { id: 4, name: "Natural Mineral Water", size: "2 Ltr", type: "mineral", img: "fas fa-wine-bottle", desc: "Family pack for dining.", cat: "mineral" },
+            
+            // Packaged Drinking Water
+            { id: 5, name: "Packaged Drinking Water", size: "200ml", type: "drinking", img: "fas fa-glass-whiskey", desc: "Economy party pack.", cat: "drinking" },
+            { id: 6, name: "Packaged Drinking Water", size: "500ml", type: "drinking", img: "fas fa-tint", desc: "Regular daily use.", cat: "drinking" },
+            { id: 7, name: "Packaged Drinking Water", size: "1000ml", type: "drinking", img: "fas fa-bottle-water", desc: "Pure hydration.", cat: "drinking" },
+            { id: 8, name: "Packaged Drinking Water", size: "2 Ltr", type: "drinking", img: "fas fa-jug-detergent", desc: "Large volume hydration.", cat: "drinking" },
+
+            // Alkaline Gold
+            { id: 9, name: "Alkaline Gold Premium", size: "500ml", type: "alkaline", img: "fas fa-gem", desc: "pH 8.5+ with Gold dust infusion.", cat: "alkaline", isGold: true },
+            { id: 10, name: "Alkaline Gold Premium", size: "1 Ltr", type: "alkaline", img: "fas fa-crown", desc: "Exclusive luxury edition.", cat: "alkaline", isGold: true },
+        ];
 
         const blogs = [
             {
