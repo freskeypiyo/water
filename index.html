@@ -971,22 +971,50 @@
         // DATA MODEL
         // =======================
         const products = [
-            // Natural Mineral Water
-            { id: 1, name: "Natural Mineral Water", size: "200ml", type: "mineral", img: "fas fa-wine-bottle", desc: "Perfect for quick meetings.", cat: "mineral" },
-            { id: 2, name: "Natural Mineral Water", size: "500ml", type: "mineral", img: "fas fa-wine-bottle", desc: "The standard on-the-go refresher.", cat: "mineral" },
-            { id: 3, name: "Natural Mineral Water", size: "1000ml", type: "mineral", img: "fas fa-wine-bottle", desc: "Hydration for the whole day.", cat: "mineral" },
-            { id: 4, name: "Natural Mineral Water", size: "2 Ltr", type: "mineral", img: "fas fa-wine-bottle", desc: "Family pack for dining.", cat: "mineral" },
-            
-            // Packaged Drinking Water
-            { id: 5, name: "Packaged Drinking Water", size: "200ml", type: "drinking", img: "fas fa-glass-whiskey", desc: "Economy party pack.", cat: "drinking" },
-            { id: 6, name: "Packaged Drinking Water", size: "500ml", type: "drinking", img: "fas fa-tint", desc: "Regular daily use.", cat: "drinking" },
-            { id: 7, name: "Packaged Drinking Water", size: "1000ml", type: "drinking", img: "fas fa-bottle-water", desc: "Pure hydration.", cat: "drinking" },
-            { id: 8, name: "Packaged Drinking Water", size: "2 Ltr", type: "drinking", img: "fas fa-jug-detergent", desc: "Large volume hydration.", cat: "drinking" },
+    // Natural Mineral Water
+    { id: 1, name: "Natural Mineral Water", size: "200ml", type: "mineral", 
+      img: "https://github.com/freskeypiyo/water/blob/main/500ml.png?raw=true",
+      desc: "Perfect for quick meetings.", cat: "mineral", price: 5 },
 
-            // Alkaline Gold
-            { id: 9, name: "Alkaline Gold Premium", size: "500ml", type: "alkaline", img: "fas fa-gem", desc: "pH 8.5+ with Gold dust infusion.", cat: "alkaline", isGold: true },
-            { id: 10, name: "Alkaline Gold Premium", size: "1 Ltr", type: "alkaline", img: "fas fa-crown", desc: "Exclusive luxury edition.", cat: "alkaline", isGold: true },
-        ]
+    { id: 2, name: "Natural Mineral Water", size: "500ml", type: "mineral", 
+      img: "https://github.com/freskeypiyo/water/blob/main/500ml.png?raw=true",
+      desc: "The standard on-the-go refresher.", cat: "mineral", price: 10 },
+
+    { id: 3, name: "Natural Mineral Water", size: "1000ml", type: "mineral", 
+      img: "https://github.com/freskeypiyo/water/blob/main/1000ml.png?raw=true",
+      desc: "Hydration for the whole day.", cat: "mineral", price: 19 },
+
+    { id: 4, name: "Natural Mineral Water", size: "2 Ltr", type: "mineral", 
+      img: "https://github.com/freskeypiyo/water/blob/main/1000ml.png?raw=true",
+      desc: "Family pack for dining.", cat: "mineral", price: 35 },
+
+    // Packaged Drinking Water
+    { id: 5, name: "Packaged Drinking Water", size: "200ml", type: "drinking", 
+      img: "https://github.com/freskeypiyo/water/blob/main/500ml.png?raw=true",
+      desc: "Economy party pack.", cat: "drinking", price: 5 },
+
+    { id: 6, name: "Packaged Drinking Water", size: "500ml", type: "drinking",
+      img: "https://github.com/freskeypiyo/water/blob/main/500ml.png?raw=true",
+      desc: "Regular daily use.", cat: "drinking", price: 10 },
+
+    { id: 7, name: "Packaged Drinking Water", size: "1000ml", type: "drinking", 
+      img: "https://github.com/freskeypiyo/water/blob/main/1000ml.png?raw=true",
+      desc: "Pure hydration.", cat: "drinking", price: 19 },
+
+    { id: 8, name: "Packaged Drinking Water", size: "2 Ltr", type: "drinking", 
+      img: "https://github.com/freskeypiyo/water/blob/main/1000ml.png?raw=true",
+      desc: "Large volume hydration.", cat: "drinking", price: 35 },
+
+    // Alkaline Gold
+    { id: 9, name: "Alkaline Gold Premium", size: "500ml", type: "alkaline", 
+      img: "https://github.com/freskeypiyo/water/blob/main/500ml.png?raw=true",
+      desc: "pH 8.5+ with Gold dust infusion.", cat: "alkaline", price: 10, isGold: true },
+
+    { id: 10, name: "Alkaline Gold Premium", size: "1 Ltr", type: "alkaline", 
+      img: "https://github.com/freskeypiyo/water/blob/main/1000ml.png?raw=true",
+      desc: "Exclusive luxury edition.", cat: "alkaline", price: 19, isGold: true },
+];
+
 
         const blogs = [
             {
