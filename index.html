@@ -918,12 +918,79 @@
                         </div>
                         <div class="form-group">
                             <label>Select Products</label>
-                            <div style="background: #f9f9f9; padding: 10px; border-radius: 5px; height: 100px; overflow-y: scroll; border: 1px solid #ddd;">
-                                <label><input type="checkbox" name="prod" value="Mineral 200ml"> Mineral 200ml (Pack of 24)</label><br>
-                                <label><input type="checkbox" name="prod" value="Mineral 500ml"> Mineral 500ml (Pack of 24)</label><br>
-                                <label><input type="checkbox" name="prod" value="Mineral 1L"> Mineral 1L (Pack of 12)</label><br>
-                                <label><input type="checkbox" name="prod" value="Drinking 2L"> Drinking Water 2L (Pack of 6)</label><br>
-                                <label><input type="checkbox" name="prod" value="Alkaline 500ml"> Alkaline Gold 500ml</label>
+                            <div style="background: #f9f9f9; padding: 10px; border-radius: 5px; overflow-y: scroll; border: 1px solid #ddd;">
+                                <!-- Mineral Water -->
+<label>
+  Mineral 200ml:
+  <select name="Mineral 200ml" min="7" max="6000">
+    <option value="0">Select Boxes</option>
+    <option value="7">7 Boxes</option>
+    <option value="10">10 Boxes</option>
+    <option value="20">20 Boxes</option>
+    <option value="50">50 Boxes</option>
+    <option value="100">100 Boxes</option>
+    <option value="500">500 Boxes</option>
+    <option value="1000">1000 Boxes</option>
+    <option value="6000">6000 Boxes</option>
+  </select>
+</label><br>
+
+<label>
+  Mineral 500ml:
+  <select name="Mineral 500ml" min="7" max="6000">
+    <option value="0">Select Boxes</option>
+    <option value="7">7 Boxes</option>
+    <option value="10">10 Boxes</option>
+    <option value="20">20 Boxes</option>
+    <option value="50">50 Boxes</option>
+    <option value="100">100 Boxes</option>
+    <option value="500">500 Boxes</option>
+    <option value="1000">1000 Boxes</option>
+    <option value="6000">6000 Boxes</option>
+  </select>
+</label><br>
+
+<label>
+  Mineral 1L:
+  <select name="Mineral 1L" min="7" max="6000">
+    <option value="0">Select Boxes</option>
+    <option value="7">7 Boxes</option>
+    <option value="10">10 Boxes</option>
+    <option value="20">20 Boxes</option>
+    <option value="50">50 Boxes</option>
+    <option value="100">100 Boxes</option>
+    <option value="500">500 Boxes</option>
+    <option value="1000">1000 Boxes</option>
+    <option value="6000">6000 Boxes</option>
+  </select>
+</label><br>
+
+<!-- Alkaline -->
+<label>
+  Alkaline Gold 500ml:
+  <select name="Alkaline 500ml" min="7" max="6000">
+    <option value="0">Select Boxes</option>
+    <option value="7">7 Boxes</option>
+    <option value="10">10 Boxes</option>
+    <option value="20">20 Boxes</option>
+    <option value="50">50 Boxes</option>
+    <option value="100">100 Boxes</option>
+    <option value="500">500 Boxes</option>
+    <option value="1000">1000 Boxes</option>
+    <option value="6000">6000 Boxes</option>
+  </select>
+</label><br>
+
+<!-- Custom Option -->
+<label>
+  Custom Product:
+  <input type="text" name="customProduct" placeholder="Enter product">
+</label>
+<label>
+  Qty:
+  <input type="number" name="customQty" min="7" max="6000" placeholder="Min 7">
+</label><br>
+
                             </div>
                         </div>
                         <div class="form-group">
