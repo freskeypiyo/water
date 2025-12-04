@@ -206,6 +206,14 @@
             display: flex;
             justify-content: center;
         }
+.price {
+    font-weight: bold;
+    margin: 5px 0;
+    color: #007A3D;
+}
+.shop-grid img {
+    width: 90px;
+}
 
         .bottle-container {
             width: 250px;
@@ -970,7 +978,7 @@
         // =======================
         // DATA MODEL
         // =======================
-        const products = [
+       const products = [
     // Natural Mineral Water
     { id: 1, name: "Natural Mineral Water", size: "200ml", type: "mineral", 
       img: "https://github.com/freskeypiyo/water/blob/main/500ml.png?raw=true",
@@ -1015,6 +1023,30 @@
       desc: "Exclusive luxury edition.", cat: "alkaline", price: 19, isGold: true },
 ];
 
+function displayProducts(list) {
+    const grid = document.getElementById("productGrid");
+    grid.innerHTML = list.map(p => `
+        <div class="product-card" data-type="${p.type}">
+            <img src="${p.img}" alt="${p.name}">
+            <h4>${p.name}</h4>
+            <p>${p.size}</p>
+            <span class="price">MRP: ₹${p.price}</span>
+            <small>${p.desc}</small>
+        </div>
+    `).join("");
+}
+
+function filterShop(type) {
+    document.querySelectorAll(".filter-btn")
+        .forEach(btn => btn.classList.remove("active"));
+    event.target.classList.add("active");
+
+    displayProducts(type === "all" ?
+        products : products.filter(p => p.type === type)
+    );
+}
+
+displayProducts(products);
 
         const blogs = [
             {
