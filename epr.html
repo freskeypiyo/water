@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPR Sustainability - Freskey</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #0b2d46; --green: #7ab800; }
+        body { margin:0; font-family:'Open Sans', sans-serif; background: #fff;}
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        
+        .header-bg { background: var(--primary); padding: 40px 20px; text-align: center; color: white; }
+        .header-bg h1 { margin:0; font-family: 'Montserrat', sans-serif; }
+        
+        .cert-container { 
+            border: 10px solid #eee; padding: 40px; margin-top: -30px; background: white; 
+            text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+        }
+        
+        .badge { background: var(--green); color: white; padding: 5px 15px; border-radius: 50px; font-weight: bold; text-transform: uppercase; font-size: 0.8rem; display: inline-block; margin-bottom: 20px;}
+        
+        .cert-icon { font-size: 5rem; color: var(--primary); margin-bottom: 20px; }
+        
+        .commitments { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; text-align: left; }
+        .c-box { background: #f9f9f9; padding: 20px; border-left: 4px solid var(--green); }
+        .c-box h4 { margin: 0 0 10px 0; color: var(--primary); }
+
+        .back-link { display: block; text-align: center; margin-top: 40px; color: var(--primary); font-weight: 700; text-decoration: none;}
+
+        @media(max-width: 768px) { .commitments { grid-template-columns: 1fr; } .cert-container{ padding: 20px; }}
+    </style>
+</head>
+<body>
+
+    <div class="header-bg">
+        <a href="index.html" style="color:white; text-decoration:none; font-weight:800; font-size:1.5rem; display:block; margin-bottom:10px;">FRESKEY</a>
+        <h1>Extended Producer Responsibility</h1>
+    </div>
+
+    <div class="container">
+        <div class="cert-container">
+            <span class="badge">EPR Approved</span>
+            <div class="cert-icon">♻️</div>
+            
+            <h2 style="margin-bottom: 10px; color: #333;">Commitment to Plastic Waste Management</h2>
+            <p><strong>Registration No:</strong> FRES/CPCB/EPR/2024-25/098</p>
+            <p style="color:#666; max-width: 600px; margin: 0 auto;">
+                Freskey is officially registered with the Central Pollution Control Board (CPCB). We strictly adhere to PWM (Plastic Waste Management) Rules 2016 (as amended) to ensure the collection, segregation, and recycling of post-consumer plastic waste.
+            </p>
+
+            <div class="commitments">
+                <div class="c-box">
+                    <h4>Target: 100% Recovery</h4>
+                    <p>We work with authorized PROs (Producer Responsibility Organizations) to collect back equivalent weight of plastic we put into the market.</p>
+                </div>
+                <div class="c-box">
+                    <h4>Circular Economy</h4>
+                    <p>Our bottles are sent to certified recycling units to be converted into flakes, fiber, and utility products, closing the loop.</p>
+                </div>
+            </div>
+
+            <button style="margin-top:30px; padding:15px 30px; background:#333; color:white; border:none; border-radius:4px; cursor:pointer;" onclick="alert('Demo: Downloading PDF...')">Download Official Certificate (PDF)</button>
+        </div>
+
+        <a href="index.html" class="back-link">← Return to Website</a>
+    </div>
+
+</body>
+</html>
