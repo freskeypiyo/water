@@ -420,10 +420,9 @@
             height: 90vh; /* Viewport Height for premium feel */
             min-height: 600px;
             max-height: 1080px;
-            /* Radial Gradient simulating light hit in the center like Aava ref */
             background: radial-gradient(circle at center, #ffffff 10%, #d8edf5 60%, #bde3ed 100%);
             display: flex;
-            flex-direction: row; /* Horizontal layout by default */
+            flex-direction: row; 
             align-items: center;
             justify-content: center;
             overflow: hidden;
@@ -533,7 +532,7 @@
         .cap {
             width: 100%;
             height: 20px;
-            background-color: var(--color-brand-primary); /* Use Primary for standard, Green for Premium logic */
+            background-color: var(--color-brand-primary);
             position: absolute;
             top: -20px;
             border-radius: 4px 4px 0 0;
@@ -650,7 +649,7 @@
         }
 
         /* ==========================================================================
-           6.0 PRODUCTS & SHOP (Tabs & Cards)
+           6.0 PRODUCTS & SHOP
            ========================================================================== */
         
         #shop {
@@ -659,7 +658,6 @@
             position: relative;
         }
         
-        /* Product Categories Tabs */
         .product-tabs {
             display: flex;
             justify-content: center;
@@ -690,10 +688,9 @@
             background-color: var(--color-brand-accent);
         }
 
-        /* Shop Grid */
         .shop-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr); /* 4 items row */
+            grid-template-columns: repeat(4, 1fr); 
             gap: 30px;
         }
         
@@ -723,7 +720,6 @@
             position: relative;
         }
         
-        /* Floating badge for New/Best Value */
         .tag-corner {
             position: absolute;
             top: 15px;
@@ -791,7 +787,6 @@
         .add-to-cart-btn:hover { background: var(--color-brand-dark); }
         .add-to-cart-btn svg { width: 18px; fill: white; }
 
-        /* Full Details Link */
         .more-details-link {
             font-size: 0.8rem;
             text-decoration: underline;
@@ -801,7 +796,92 @@
         }
 
         /* ==========================================================================
-           7.0 HYDRATION CALCULATOR (VALUE ADD FEATURE)
+           7.0 PARTNERS & ECOSYSTEM (NEW ADDITION)
+           ========================================================================== */
+        
+        #partners {
+            padding: var(--spacing-xxl) 0;
+            background-color: #f8fcfd;
+            border-top: 1px solid #e1e1e1;
+        }
+        
+        .partner-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .partner-card {
+            background: white;
+            padding: 40px 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+            border: 1px solid #eee;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .partner-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--color-brand-primary);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .p-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: #f0f8ff;
+            padding: 15px;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .partner-card h4 {
+            font-size: 1.1rem;
+            color: var(--color-brand-dark);
+            font-weight: 700;
+            margin-bottom: 10px;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .partner-card p {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .partner-cta-box {
+            background: linear-gradient(to right, #ffffff, #f0fbff);
+            border: 2px dashed var(--color-brand-primary);
+            padding: 40px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+            box-shadow: 0 5px 15px rgba(0, 142, 176, 0.05);
+        }
+
+        .cta-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        /* ==========================================================================
+           8.0 TOOL & REVIEWS
            ========================================================================== */
         
         .tool-section {
@@ -848,10 +928,6 @@
             color: var(--color-brand-accent);
         }
 
-        /* ==========================================================================
-           8.0 REVIEWS & TRUST (Carousel)
-           ========================================================================== */
-        
         #reviews {
             padding: var(--spacing-xxl) 0;
             background: var(--color-white);
@@ -868,10 +944,9 @@
         .reviews-track {
             display: flex;
             gap: 30px;
-            animation: scrollReview 40s linear infinite; /* Auto Scroll */
+            animation: scrollReview 40s linear infinite; 
         }
         
-        /* If user hovers, pause */
         .reviews-track:hover { animation-play-state: paused; }
 
         @keyframes scrollReview {
@@ -908,7 +983,6 @@
         .reviewer-name { font-weight: 700; color: var(--color-brand-dark); }
         .reviewer-type { font-size: 0.8rem; color: var(--color-grey-500); text-transform: uppercase; }
 
-        /* Trusted Badges */
         .trusted-logos-strip {
             border-top: 1px solid var(--color-grey-300);
             border-bottom: 1px solid var(--color-grey-300);
@@ -933,9 +1007,8 @@
         }
         .badge-svg { width: 50px; height: 50px; margin-bottom: 10px; fill: #999; }
 
-
         /* ==========================================================================
-           9.0 CONTACT FORM & FAQ
+           9.0 CONTACT, FAQ, FOOTER
            ========================================================================== */
         #contact { padding: var(--spacing-xxl) 0; }
         
@@ -955,7 +1028,6 @@
         
         .contact-list li { margin-bottom: 15px; display: flex; align-items: flex-start; gap: 10px; }
 
-        /* Accordion for FAQ/Details */
         .faq-wrapper { margin-top: 40px; }
         .accordion-item {
             border-bottom: 1px solid var(--color-grey-300);
@@ -978,9 +1050,6 @@
         }
         .accordion-content p { padding-bottom: 20px; }
 
-        /* ==========================================================================
-           10.0 EXTENSIVE FOOTER
-           ========================================================================== */
         footer {
             background-color: var(--color-black);
             color: rgba(255,255,255,0.7);
@@ -1023,48 +1092,6 @@
             align-items: center;
         }
 
-        /* ==========================================================================
-           11.0 MEDIA QUERIES (RESPONSIVENESS)
-           ========================================================================== */
-        
-        @media (max-width: 1200px) {
-            .hero-heading { font-size: 3rem; }
-            .specs-wrapper { grid-template-columns: 1fr; } /* Stack on mid-size if needed or keep row */
-            .shop-grid { grid-template-columns: repeat(3, 1fr); }
-            .pH-badge { right: 5%; top: 10%; width: 100px; height: 100px; }
-        }
-
-        @media (max-width: 992px) {
-            #home { flex-direction: column-reverse; height: auto; padding: 120px 0 50px 0; }
-            .hero-text-content { padding: 20px; text-align: center; }
-            .hero-heading { font-size: 2.5rem; }
-            .hero-visuals { height: 400px; }
-            .main-nav { display: none; } /* Hide Desktop Nav */
-            .hamburger-btn { display: flex; } /* Show Mobile Nav Button */
-            
-            .shop-grid { grid-template-columns: repeat(2, 1fr); }
-            
-            .footer-main { grid-template-columns: 1fr 1fr; gap: 30px; }
-            
-            .tool-grid { grid-template-columns: 1fr; }
-            .contact-grid { grid-template-columns: 1fr; }
-        }
-
-        @media (max-width: 576px) {
-            .shop-grid { grid-template-columns: 1fr; }
-            .section-title { font-size: 2rem; }
-            .footer-main { grid-template-columns: 1fr; }
-            .footer-bottom { flex-direction: column; gap: 20px; }
-            .top-notification-bar { font-size: 0.65rem; }
-        }
-
-        /* Print Styles */
-        @media print {
-            .site-header, #reviews, footer, .tool-section { display: none; }
-            #home, #origin, #shop { height: auto; page-break-inside: avoid; }
-        }
-
-        /* Modal / Sidebar for Product Details */
         .modal-overlay {
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
@@ -1091,11 +1118,56 @@
         }
         .close-modal { position: absolute; top: 15px; right: 20px; font-size: 1.5rem; cursor: pointer; }
         
-        /* Product Spec Table in Modal */
         .spec-table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 0.9rem; }
         .spec-table td { padding: 8px; border-bottom: 1px solid #eee; }
         .spec-table td:first-child { font-weight: 700; color: var(--color-brand-dark); }
+
+        /* ==========================================================================
+           10.0 MEDIA QUERIES (RESPONSIVENESS)
+           ========================================================================== */
         
+        @media (max-width: 1200px) {
+            .hero-heading { font-size: 3rem; }
+            .specs-wrapper { grid-template-columns: 1fr; }
+            .shop-grid { grid-template-columns: repeat(3, 1fr); }
+            .pH-badge { right: 5%; top: 10%; width: 100px; height: 100px; }
+        }
+
+        @media (max-width: 992px) {
+            #home { flex-direction: column-reverse; height: auto; padding: 120px 0 50px 0; }
+            .hero-text-content { padding: 20px; text-align: center; }
+            .hero-heading { font-size: 2.5rem; }
+            .hero-visuals { height: 400px; }
+            .main-nav { display: none; }
+            .hamburger-btn { display: flex; }
+            
+            .shop-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-main { grid-template-columns: 1fr 1fr; gap: 30px; }
+            
+            .tool-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+            
+            /* Partner Responsive */
+            .partner-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 576px) {
+            .shop-grid { grid-template-columns: 1fr; }
+            .section-title { font-size: 2rem; }
+            .footer-main { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 20px; }
+            .top-notification-bar { font-size: 0.65rem; }
+
+            /* Partner Responsive */
+            .partner-grid { grid-template-columns: 1fr; }
+            .partner-cta-box { text-align: center; justify-content: center; }
+            .cta-text { min-width: auto; margin-bottom: 20px; }
+        }
+
+        @media print {
+            .site-header, #reviews, footer, .tool-section, #partners { display: none; }
+            #home, #origin, #shop { height: auto; page-break-inside: avoid; }
+        }
     </style>
 </head>
 <body>
@@ -1118,11 +1190,11 @@
                 <a href="#origin">The Origin</a>
                 <a href="#shop">Shop</a>
                 <a href="#responsibility">Sustainability</a>
-                <a href="#contact">Partner</a>
+                <a href="#partners">Network</a>
+                <a href="#contact">Contact</a>
             </nav>
 
             <div class="header-actions">
-                <!-- Search Icon (Decorative) -->
                 <button class="hidden-mobile">
                     <svg width="20" height="20" fill="none" stroke="#333" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                 </button>
@@ -1135,7 +1207,6 @@
                     <span class="cart-count" id="cartCount">0</span>
                 </div>
 
-                <!-- Hamburger for Mobile -->
                 <div class="hamburger-btn" onclick="toggleMobileMenu()">
                     <span class="ham-bar"></span>
                     <span class="ham-bar"></span>
@@ -1144,17 +1215,16 @@
             </div>
         </div>
         
-        <!-- Mobile Dropdown -->
         <div class="mobile-menu" id="mobileMenu">
             <a href="#home" class="mobile-nav-link" onclick="toggleMobileMenu()">Home</a>
             <a href="#origin" class="mobile-nav-link" onclick="toggleMobileMenu()">Our Origin</a>
             <a href="#shop" class="mobile-nav-link" onclick="toggleMobileMenu()">Shop Products</a>
-            <a href="#responsibility" class="mobile-nav-link" onclick="toggleMobileMenu()">Sustainability</a>
+            <a href="#partners" class="mobile-nav-link" onclick="toggleMobileMenu()">Our Partners</a>
             <a href="#contact" class="mobile-nav-link" onclick="toggleMobileMenu()">Contact Us</a>
         </div>
     </header>
 
-    <!-- 3. HERO SECTION (REF: "BORN ALKALINE") -->
+    <!-- 3. HERO SECTION -->
     <section id="home">
         <div class="pH-badge">
             <span class="pH-text">pH</span>
@@ -1191,7 +1261,7 @@
                 </div>
                 <!-- 500ml -->
                 <div class="css-bottle b-500">
-                    <div class="cap b-cap-green"></div> <!-- Different cap color for differentiation -->
+                    <div class="cap b-cap-green"></div> 
                     <div class="label" style="top: 30%;">
                         <div>
                             <span class="label-text">Freskey</span>
@@ -1225,7 +1295,7 @@
                 <span>BIS / ISI CERTIFIED</span>
             </div>
             <div class="trust-badge">
-                <svg class="badge-svg" viewBox="0 0 24 24"><path d="M16 6l2.29-2.29-4.88-4.88-4 4L2 2h20l-1.5 5.5z M19 12a7 7 0 1 1-14 0 7 7 0 0 1 14 0z"/></svg> <!-- Placeholder for eco icon -->
+                <svg class="badge-svg" viewBox="0 0 24 24"><path d="M16 6l2.29-2.29-4.88-4.88-4 4L2 2h20l-1.5 5.5z M19 12a7 7 0 1 1-14 0 7 7 0 0 1 14 0z"/></svg> 
                 <span>100% RECYCLABLE PET</span>
             </div>
             <div class="trust-badge">
@@ -1245,7 +1315,6 @@
             </p>
             
             <div class="tech-spec-section">
-                <!-- 3 Columns mimicking Ref -->
                 <div class="specs-wrapper">
                     <!-- 1. pH -->
                     <div class="spec-item">
@@ -1281,7 +1350,7 @@
         </div>
     </section>
 
-    <!-- 6. SHOP SECTION (GRID WITH DETAIL BUTTONS) -->
+    <!-- 6. SHOP SECTION -->
     <section id="shop">
         <div class="container">
             <div class="text-center">
@@ -1300,7 +1369,6 @@
                 <div class="product-card" data-cat="travel bulk">
                     <div class="tag-corner">Events Special</div>
                     <div class="prod-image-area">
-                         <!-- Visual representation via small CSS bottles inside -->
                          <div class="css-bottle b-200" style="transform: scale(0.8);">
                              <div class="cap"></div>
                              <div class="label" style="font-size: 0.6rem; height: 30px;">
@@ -1395,7 +1463,6 @@
                 <!-- Item 4: 20L (Jars) -->
                 <div class="product-card" data-cat="bulk home">
                     <div class="prod-image-area">
-                         <!-- Simplified jar rep -->
                          <div style="width:120px;height:160px;background:#ccebf5;border-radius:10px;border:1px solid #abdcf0;position:relative;box-shadow:inset 0 0 20px #a4d4e6;">
                              <div style="width:40px;height:20px;background:#006680;margin: -20px auto 0 auto;"></div>
                          </div>
@@ -1428,7 +1495,7 @@
         </div>
     </section>
 
-    <!-- 7. INTERACTIVE TOOL (Hydration Calc) -->
+    <!-- 7. HYDRATION TOOL -->
     <section class="tool-section">
         <div class="container">
             <div class="tool-grid">
@@ -1458,7 +1525,7 @@
         </div>
     </section>
 
-    <!-- 8. SUSTAINABILITY (Detailed Text) -->
+    <!-- 8. SUSTAINABILITY -->
     <section id="responsibility" style="padding: var(--spacing-xxl) 0;">
         <div class="container">
             <div class="text-center" style="margin-bottom:60px;">
@@ -1487,8 +1554,8 @@
         </div>
     </section>
 
-    <!-- 8.5 PARTNERS & NETWORK SECTION -->
-    <section id="partners" style="padding: var(--spacing-xxl) 0; background-color: #f8fcfd; border-top: 1px solid #e1e1e1;">
+    <!-- 8.5 PARTNERS & NETWORK SECTION (NEW) -->
+    <section id="partners">
         <div class="container">
             <!-- Header -->
             <div class="text-center" style="margin-bottom: 60px;">
@@ -1538,61 +1605,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Section Specific CSS (Embeds automatically) -->
-        <style>
-            .partner-grid {
-                display: grid; 
-                grid-template-columns: repeat(4, 1fr); 
-                gap: 20px; 
-                margin-bottom: 60px;
-            }
-            .partner-card {
-                background: white;
-                padding: 40px 25px;
-                border-radius: 12px;
-                text-align: center;
-                box-shadow: 0 5px 20px rgba(0,0,0,0.03);
-                border: 1px solid #eee;
-                transition: transform 0.3s ease, border-color 0.3s ease;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-            .partner-card:hover {
-                transform: translateY(-5px);
-                border-color: var(--color-brand-primary);
-                box-shadow: 0 15px 30px rgba(0,0,0,0.08);
-            }
-            .p-icon { font-size: 2.5rem; margin-bottom: 20px; display: inline-block; background: #f0f8ff; padding: 15px; border-radius: 50%; width: 80px; height: 80px; display:flex; align-items:center; justify-content:center; }
-            .partner-card h4 { font-size: 1.1rem; color: var(--color-brand-dark); font-weight: 700; margin-bottom: 10px; min-height: 44px; display:flex; align-items:center; }
-            .partner-card p { font-size: 0.9rem; color: #666; line-height: 1.6; margin: 0; }
-            
-            /* CTA BOX */
-            .partner-cta-box {
-                background: linear-gradient(to right, #ffffff, #f0fbff);
-                border: 2px dashed var(--color-brand-primary);
-                padding: 40px;
-                border-radius: 16px;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                gap: 20px;
-                flex-wrap: wrap;
-                box-shadow: 0 5px 15px rgba(0, 142, 176, 0.05);
-            }
-            .cta-text { flex: 1; min-width: 300px; }
-
-            /* RESPONSIVE */
-            @media (max-width: 992px) {
-                .partner-grid { grid-template-columns: repeat(2, 1fr); }
-            }
-            @media (max-width: 576px) {
-                .partner-grid { grid-template-columns: 1fr; }
-                .partner-cta-box { text-align: center; justify-content: center; }
-                .cta-text { min-width: auto; margin-bottom: 20px; }
-            }
-        </style>
     </section>
 
     <!-- 9. REVIEWS -->
@@ -1602,7 +1614,6 @@
         </div>
         <div class="carousel-track-container">
             <div class="reviews-track">
-                <!-- We duplicate cards to ensure infinite scroll illusion -->
                 <!-- Card 1 -->
                 <div class="review-card">
                     <span class="quote-icon">“</span>
@@ -1635,7 +1646,6 @@
                     <div class="reviewer-name">Anjali P.</div>
                     <div class="reviewer-type">Subscriber</div>
                 </div>
-                <!-- Repeats for scroll effect -->
                  <div class="review-card">
                     <span class="quote-icon">“</span>
                     <div class="stars">★★★★★</div>
@@ -1744,7 +1754,6 @@
                         Manufacturing unit adhering to global HACCP protocols.
                     </p>
                     <div style="display:flex; gap:10px;">
-                        <!-- Fake Social Icons -->
                         <div style="width:30px;height:30px;background:#3b5998; border-radius:4px;"></div>
                         <div style="width:30px;height:30px;background:#e1306c; border-radius:4px;"></div>
                         <div style="width:30px;height:30px;background:#1da1f2; border-radius:4px;"></div>
@@ -1757,7 +1766,7 @@
                         <li><a href="#origin">The Process</a></li>
                         <li><a href="#shop">Product Range</a></li>
                         <li><a href="#responsibility">EPR Certificate</a></li>
-                        <li><a href="#blog">Water Science</a></li>
+                        <li><a href="#partners">Partner Network</a></li>
                     </ul>
                 </div>
                 
@@ -1788,13 +1797,12 @@
         </div>
     </footer>
     
-    <!-- 12. PRODUCT DETAILS MODAL (Hidden by default) -->
+    <!-- 12. PRODUCT DETAILS MODAL -->
     <div class="modal-overlay" id="detailsModal">
         <div class="modal-box">
             <div class="close-modal" onclick="closeModal()">×</div>
             <h2 id="m-title" class="prod-name" style="font-size:1.8rem;">Product Details</h2>
             <div id="m-content">
-                <!-- Dynamic Content injected via JS -->
             </div>
             <br>
             <div class="alert-box" style="background:#e8f4fd; padding:10px; font-size:0.8rem; border-left:3px solid #008eb0;">
@@ -1829,12 +1837,10 @@
 
         // === 3. Tab Filter for Products ===
         function filterProd(cat) {
-            // Update buttons
             const buttons = document.querySelectorAll('.p-tab-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
             event.target.classList.add('active');
             
-            // Filter logic
             const products = document.querySelectorAll('.product-card');
             products.forEach(p => {
                 if (cat === 'all') {
@@ -1855,12 +1861,8 @@
             count += qty;
             const badge = document.getElementById("cartCount");
             badge.innerText = count;
-            
-            // Tiny animation
             badge.style.transform = "scale(1.5)";
             setTimeout(() => { badge.style.transform = "scale(1)"; }, 200);
-            
-            // Native notification just for UX
             alert("Added " + qty + " item(s) to simulated cart!");
         }
         function openCart() {
@@ -1881,14 +1883,11 @@
                 resBox.innerText = "Please enter weight.";
                 return;
             }
-            
-            // Formula: Weight * 0.033 * Activity Multiplier
             const litres = (w * 0.033 * a).toFixed(2);
             resBox.innerHTML = `You need approx <span style="font-size:2rem;color:white;">${litres} L</span> water daily.`;
         }
 
         // === 6. Modal Details Logic ===
-        // Detailed data object mimicking database
         const productData = {
             'mini': {
                 title: "Freskey Mini (200ml)",
@@ -1943,12 +1942,10 @@
         function openDetails(pid) {
             const modal = document.getElementById('detailsModal');
             const data = productData[pid];
-            
             document.getElementById('m-title').innerText = data.title;
             document.getElementById('m-content').innerHTML = data.table;
-            
             modal.classList.add('open');
-            document.body.style.overflow = 'hidden'; // Stop background scroll
+            document.body.style.overflow = 'hidden'; 
         }
 
         function closeModal() {
@@ -1956,7 +1953,6 @@
             document.body.style.overflow = 'auto';
         }
         
-        // Close modal on outside click
         document.getElementById('detailsModal').addEventListener('click', function(e) {
             if (e.target === this) {
                 closeModal();
@@ -1980,7 +1976,6 @@
         // === 8. Contact Form Handler ===
         function handleForm(e) {
             e.preventDefault();
-            // Simulate API call
             const btn = e.target.querySelector('button');
             const initialText = btn.innerText;
             btn.innerText = "Sending...";
@@ -1992,7 +1987,6 @@
                 setTimeout(() => { btn.innerText = initialText; }, 2000);
             }, 1000);
         }
-
     </script>
 </body>
 </html>
