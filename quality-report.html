@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Quality Report - Freskey</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #0b2d46; --secondary: #008eb0; }
+        body { font-family: 'Open Sans', sans-serif; color: #333; margin:0; padding:0; background:#f9f9f9; }
+        
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        header { background: white; padding: 20px; border-bottom: 1px solid #ddd; text-align: center; }
+        .logo { font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--primary); text-decoration:none; text-transform:uppercase;}
+        
+        .report-header { text-align: center; margin: 40px 0; }
+        .report-header h1 { color: var(--primary); margin-bottom: 10px; font-family:'Montserrat',sans-serif; }
+        .report-meta { background: #e0f2f1; display: inline-block; padding: 10px 20px; border-radius: 4px; font-weight: 600; color: #00695c; }
+        
+        /* TABLE STYLING */
+        .q-table-wrap { overflow-x: auto; background: white; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-radius: 8px; }
+        .q-table { width: 100%; border-collapse: collapse; min-width: 600px; }
+        .q-table th { background: var(--primary); color: white; padding: 15px; text-align: left; font-family:'Montserrat',sans-serif; }
+        .q-table td { padding: 12px 15px; border-bottom: 1px solid #eee; }
+        .q-table tr:nth-child(even) { background-color: #f8f8f8; }
+        .pass-tag { color: green; font-weight: 700; background: #e8f5e9; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem;}
+
+        .disclaimer { margin-top: 30px; font-size: 0.85rem; color: #666; font-style: italic; text-align: center;}
+        .back-link { display:block; margin: 30px auto; width: fit-content; text-decoration:none; color: var(--secondary); font-weight:700;}
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="logo">Fres<span>key</span></a>
+</header>
+
+<div class="container">
+    <div class="report-header">
+        <h1>Annual Quality Report</h1>
+        <div class="report-meta">Conforming to IS 14543 : 2004 Standards</div>
+        <p>Lab Reference No: FRES/DEL/2025/JAN-001</p>
+    </div>
+
+    <div class="q-table-wrap">
+        <table class="q-table">
+            <thead>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Freskey Value</th>
+                    <th>Acceptable Limit (BIS)</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>pH Value</strong></td>
+                    <td>7.2</td>
+                    <td>6.5 - 8.5</td>
+                    <td><span class="pass-tag">Normal</span></td>
+                </tr>
+                <tr>
+                    <td><strong>TDS (Total Dissolved Solids)</strong></td>
+                    <td>145 mg/L</td>
+                    <td>< 500 mg/L</td>
+                    <td><span class="pass-tag">Normal</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Turbidity</strong></td>
+                    <td>0.1 NTU</td>
+                    <td>< 1 NTU</td>
+                    <td><span class="pass-tag">Clear</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Calcium (as Ca)</strong></td>
+                    <td>22 mg/L</td>
+                    <td>< 75 mg/L</td>
+                    <td><span class="pass-tag">Normal</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Magnesium (as Mg)</strong></td>
+                    <td>8.5 mg/L</td>
+                    <td>< 30 mg/L</td>
+                    <td><span class="pass-tag">Normal</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Chloride (as Cl)</strong></td>
+                    <td>12 mg/L</td>
+                    <td>< 250 mg/L</td>
+                    <td><span class="pass-tag">Normal</span></td>
+                </tr>
+                <tr>
+                    <td><strong>E. Coli</strong></td>
+                    <td>Absent</td>
+                    <td>Absent</td>
+                    <td><span class="pass-tag">SAFE</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Coliform Bacteria</strong></td>
+                    <td>Absent</td>
+                    <td>Absent</td>
+                    <td><span class="pass-tag">SAFE</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p class="disclaimer">
+        *Sample tested at NABL Accredited Laboratory. Results apply to the sample tested. Storage conditions may affect parameters over time.
+    </p>
+
+    <a href="index.html" class="back-link">← Return to Website</a>
+</div>
+
+</body>
+</html>
