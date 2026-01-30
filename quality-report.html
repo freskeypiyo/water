@@ -3,114 +3,262 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Water Quality Report - Freskey</title>
+    <title>Freskey vs Market Competitors</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0b2d46',
+                            main: '#008eb0',
+                            light: '#e0f7fa',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Open Sans', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        :root { --primary: #0b2d46; --secondary: #008eb0; }
-        body { font-family: 'Open Sans', sans-serif; color: #333; margin:0; padding:0; background:#f9f9f9; }
+        /* Custom scrollbar styling for better aesthetics */
+        .scrollbar-custom::-webkit-scrollbar {
+            height: 8px;
+            width: 8px;
+        }
+        .scrollbar-custom::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+            border-radius: 4px;
+        }
+        .scrollbar-custom::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        .scrollbar-custom::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
         
-        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
-        header { background: white; padding: 20px; border-bottom: 1px solid #ddd; text-align: center; }
-        .logo { font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--primary); text-decoration:none; text-transform:uppercase;}
-        
-        .report-header { text-align: center; margin: 40px 0; }
-        .report-header h1 { color: var(--primary); margin-bottom: 10px; font-family:'Montserrat',sans-serif; }
-        .report-meta { background: #e0f2f1; display: inline-block; padding: 10px 20px; border-radius: 4px; font-weight: 600; color: #00695c; }
-        
-        /* TABLE STYLING */
-        .q-table-wrap { overflow-x: auto; background: white; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-radius: 8px; }
-        .q-table { width: 100%; border-collapse: collapse; min-width: 600px; }
-        .q-table th { background: var(--primary); color: white; padding: 15px; text-align: left; font-family:'Montserrat',sans-serif; }
-        .q-table td { padding: 12px 15px; border-bottom: 1px solid #eee; }
-        .q-table tr:nth-child(even) { background-color: #f8f8f8; }
-        .pass-tag { color: green; font-weight: 700; background: #e8f5e9; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem;}
-
-        .disclaimer { margin-top: 30px; font-size: 0.85rem; color: #666; font-style: italic; text-align: center;}
-        .back-link { display:block; margin: 30px auto; width: fit-content; text-decoration:none; color: var(--secondary); font-weight:700;}
+        /* Ensure sticky column sits on top */
+        .sticky-col {
+            position: sticky;
+            left: 0;
+            z-index: 20;
+            background-color: #f8fafc; /* Matches slate-50 */
+        }
+        /* Shadow for the sticky column to indicate scroll depth */
+        .sticky-col::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 5px;
+            background: linear-gradient(to right, rgba(0,0,0,0.05), transparent);
+            pointer-events: none;
+        }
     </style>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-800 antialiased">
 
-<header>
-    <a href="index.html" class="logo">Fres<span>key</span></a>
-</header>
+    <!-- HEADER -->
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="font-display font-extrabold text-2xl tracking-wide text-brand-dark uppercase">
+                Fres<span class="text-brand-main">key</span>
+            </a>
+            <a href="index.html" class="text-sm font-bold text-brand-main hover:text-brand-dark hidden sm:block">
+                &larr; Back to Home
+            </a>
+        </div>
+    </header>
 
-<div class="container">
-    <div class="report-header">
-        <h1>Annual Quality Report</h1>
-        <div class="report-meta">Conforming to IS 14543 : 2004 Standards</div>
-        <p>Lab Reference No: FRES/DEL/2025/JAN-001</p>
+    <div class="max-w-7xl mx-auto px-2 md:px-6 py-8">
+        
+        <!-- TITLE SECTION -->
+        <div class="text-center mb-8 px-2">
+            <h1 class="font-display text-2xl md:text-4xl font-bold text-brand-dark mb-2">The Unfiltered Truth</h1>
+            <p class="text-gray-500 text-sm md:text-base max-w-2xl mx-auto">
+                Not all water is created equal. We compared Freskey against the top 4 market leaders using strict lab parameters.
+            </p>
+        </div>
+
+        <!-- RESPONSIVE TABLE CONTAINER -->
+        <div class="relative w-full rounded-xl shadow-xl bg-white border border-gray-200 overflow-hidden">
+            
+            <!-- Scrollable Area -->
+            <div class="overflow-x-auto scrollbar-custom">
+                <table class="min-w-max border-collapse">
+                    <thead>
+                        <tr class="divide-x divide-gray-100 border-b border-gray-200">
+                            <!-- STICKY PARAMETER COLUMN -->
+                            <th class="sticky-col w-32 md:w-48 p-4 text-left font-display font-bold text-gray-700 text-xs md:text-sm shadow-[2px_0_5px_rgba(0,0,0,0.05)]">
+                                Comparison<br>Parameters
+                            </th>
+                            
+                            <!-- FRESKEY (HERO COLUMN) -->
+                            <th class="min-w-[160px] md:min-w-[200px] p-4 bg-brand-light border-t-4 border-brand-main relative">
+                                <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-orange-500 text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-md tracking-wide whitespace-nowrap z-10">
+                                    WINNER
+                                </div>
+                                <div class="flex flex-col items-center">
+                                    <!-- Replace with Freskey Bottle -->
+                                    <img src="https://placehold.co/80x200/008eb0/ffffff?text=Freskey" class="h-24 md:h-32 object-contain mb-3 drop-shadow-lg">
+                                    <span class="font-display font-extrabold text-lg md:text-xl text-brand-dark">Freskey</span>
+                                </div>
+                            </th>
+
+                            <!-- COMPETITOR A (Standard - Bisleri data) -->
+                            <th class="min-w-[140px] md:min-w-[180px] p-4 bg-white">
+                                <div class="flex flex-col items-center opacity-60 hover:opacity-100 transition duration-300">
+                                    <img src="https://placehold.co/80x200/009944/ffffff?text=Brand+A" class="h-20 md:h-24 object-contain mb-3 blur-[4px]">
+                                    <span class="text-xs md:text-sm font-bold text-gray-500">Market Leader A</span>
+                                </div>
+                            </th>
+
+                            <!-- COMPETITOR B (Acidic/RO - Aquafina data) -->
+                            <th class="min-w-[140px] md:min-w-[180px] p-4 bg-white">
+                                <div class="flex flex-col items-center opacity-60 hover:opacity-100 transition duration-300">
+                                    <img src="https://placehold.co/80x200/2233aa/ffffff?text=Brand+B" class="h-20 md:h-24 object-contain mb-3 blur-[4px]">
+                                    <span class="text-xs md:text-sm font-bold text-gray-500">Global Brand B</span>
+                                </div>
+                            </th>
+
+                            <!-- COMPETITOR C (Low TDS - Kinley data) -->
+                            <th class="min-w-[140px] md:min-w-[180px] p-4 bg-white">
+                                <div class="flex flex-col items-center opacity-60 hover:opacity-100 transition duration-300">
+                                    <img src="https://placehold.co/80x200/cc1122/ffffff?text=Brand+C" class="h-20 md:h-24 object-contain mb-3 blur-[4px]">
+                                    <span class="text-xs md:text-sm font-bold text-gray-500">Mass Brand C</span>
+                                </div>
+                            </th>
+                            
+                             <!-- COMPETITOR D (Clear data) -->
+                             <th class="min-w-[140px] md:min-w-[180px] p-4 bg-white">
+                                <div class="flex flex-col items-center opacity-60 hover:opacity-100 transition duration-300">
+                                    <img src="https://placehold.co/80x200/444444/ffffff?text=Brand+D" class="h-20 md:h-24 object-contain mb-3 blur-[4px]">
+                                    <span class="text-xs md:text-sm font-bold text-gray-500">Premium Brand D</span>
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="text-sm text-center divide-y divide-gray-100">
+                        
+                        <!-- ROW 1: TDS -->
+                        <tr class="hover:bg-gray-50 group">
+                            <td class="sticky-col p-3 text-left font-bold text-gray-700 bg-slate-50 group-hover:bg-gray-100 transition-colors border-r border-gray-200">
+                                TDS Level
+                                <span class="block text-[10px] font-normal text-gray-400 mt-1">Mineral Density</span>
+                            </td>
+                            <td class="p-3 bg-brand-light font-bold text-brand-dark border-x border-brand-main/20 text-base md:text-lg">
+                                145 <span class="text-xs font-normal">PPM</span>
+                                <span class="block text-[10px] text-brand-main uppercase font-bold mt-1">Optimal</span>
+                            </td>
+                            <td class="p-3 text-gray-600">~150 PPM</td>
+                            <td class="p-3 bg-red-50 text-red-800 font-semibold border-l border-r border-red-100">
+                                6 - 10 PPM
+                                <span class="block text-[10px] text-red-600 mt-1 font-normal">Too Low</span>
+                            </td>
+                            <td class="p-3 text-gray-600">~27 PPM</td>
+                            <td class="p-3 text-gray-600">70 - 120 PPM</td>
+                        </tr>
+
+                        <!-- ROW 2: pH -->
+                        <tr class="hover:bg-gray-50 group">
+                            <td class="sticky-col p-3 text-left font-bold text-gray-700 bg-slate-50 group-hover:bg-gray-100 transition-colors border-r border-gray-200">
+                                pH Balance
+                                <span class="block text-[10px] font-normal text-gray-400 mt-1">Acidity</span>
+                            </td>
+                            <td class="p-3 bg-brand-light font-bold text-brand-dark border-x border-brand-main/20 text-base md:text-lg">
+                                7.2
+                                <span class="block text-[10px] text-green-600 uppercase font-bold mt-1">Neutral</span>
+                            </td>
+                            <td class="p-3 text-gray-600">6.5 - 7.5</td>
+                            <td class="p-3 bg-red-50 text-red-800 font-semibold border-l border-r border-red-100">
+                                5.0 - 7.0
+                                <span class="block text-[10px] text-red-600 mt-1 font-normal">Acidic</span>
+                            </td>
+                            <td class="p-3 text-gray-600">6.5 - 8.5</td>
+                            <td class="p-3 text-gray-600">7.0 - 7.8</td>
+                        </tr>
+
+                        <!-- ROW 3: CALCIUM -->
+                        <tr class="hover:bg-gray-50 group">
+                            <td class="sticky-col p-3 text-left font-bold text-gray-700 bg-slate-50 group-hover:bg-gray-100 transition-colors border-r border-gray-200">
+                                Calcium
+                                <span class="block text-[10px] font-normal text-gray-400 mt-1">Bone Health</span>
+                            </td>
+                            <td class="p-3 bg-brand-light font-bold text-brand-dark border-x border-brand-main/20">22.0 mg/L</td>
+                            <td class="p-3 text-gray-600">10.0 mg/L</td>
+                            <td class="p-3 text-gray-400 italic">~1 mg/L</td>
+                            <td class="p-3 text-gray-600">12.0 mg/L</td>
+                            <td class="p-3 text-gray-600">15.0 mg/L</td>
+                        </tr>
+
+                        <!-- ROW 4: GAS/ADDITIVES -->
+                        <tr class="hover:bg-gray-50 group">
+                            <td class="sticky-col p-3 text-left font-bold text-gray-700 bg-slate-50 group-hover:bg-gray-100 transition-colors border-r border-gray-200">
+                                Additives
+                                <span class="block text-[10px] font-normal text-gray-400 mt-1">Chemicals/Gas</span>
+                            </td>
+                            <td class="p-3 bg-brand-light font-bold text-green-700 border-x border-brand-main/20">
+                                NONE
+                                <span class="block text-[10px] text-gray-500 font-normal mt-1">100% Natural Feel</span>
+                            </td>
+                            <td class="p-3 text-gray-600 text-xs">Ozonated</td>
+                            <td class="p-3 bg-red-100 text-red-900 font-bold text-xs border-l border-r border-red-200">
+                                NITROGEN GAS
+                                <span class="block text-[9px] text-red-700 font-normal mt-1">Industrial Additive</span>
+                            </td>
+                            <td class="p-3 text-gray-600 text-xs">Sodium Salts</td>
+                            <td class="p-3 text-gray-600 text-xs">Ozonated</td>
+                        </tr>
+
+                         <!-- ROW 5: TASTE -->
+                         <tr class="hover:bg-gray-50 group">
+                            <td class="sticky-col p-3 text-left font-bold text-gray-700 bg-slate-50 group-hover:bg-gray-100 transition-colors border-r border-gray-200">
+                                Taste
+                            </td>
+                            <td class="p-3 bg-brand-light font-bold text-brand-dark border-x border-brand-main/20 italic">
+                                "Sweet & Crisp"
+                            </td>
+                            <td class="p-3 text-gray-500 text-xs">Standard</td>
+                            <td class="p-3 text-gray-500 text-xs">Flat / Chemical</td>
+                            <td class="p-3 text-gray-500 text-xs">Slightly Salty</td>
+                            <td class="p-3 text-gray-500 text-xs">Crisp</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Mobile Swipe Hint (Visible only on small screens) -->
+            <div class="md:hidden text-center bg-gray-50 py-2 border-t border-gray-200 text-xs text-gray-400 italic">
+                &larr; Swipe table to see more competitors &rarr;
+            </div>
+        </div>
+
+        <!-- FOOTNOTES -->
+        <div class="mt-8 p-4 bg-white rounded-lg border border-gray-200 text-xs text-gray-500 leading-relaxed">
+            <p class="font-bold text-gray-700 mb-2">Analysis Notes:</p>
+            <ul class="list-disc pl-4 space-y-1">
+                <li><strong>Brand B (Global Brand):</strong> Uses Nitrogen gas for bottle pressurization and intensive RO processes, often resulting in acidic pH (5.0-7.0) and near-zero mineral content.</li>
+                <li><strong>Brand C (Mass Brand):</strong> Heavily filtered to a very low TDS (~27 PPM), requiring artificial salts (Sodium/Magnesium) to be added back for taste.</li>
+                <li><strong>Freskey:</strong> Retains a natural mineral balance (145 TDS) and a healthy neutral pH (7.2) without using gas additives.</li>
+            </ul>
+        </div>
+        
+        <div class="block sm:hidden text-center mt-6">
+            <a href="index.html" class="inline-block bg-brand-main text-white px-6 py-3 rounded-full font-bold shadow-lg">
+                Back to Home
+            </a>
+        </div>
+
     </div>
-
-    <div class="q-table-wrap">
-        <table class="q-table">
-            <thead>
-                <tr>
-                    <th>Parameter</th>
-                    <th>Freskey Value</th>
-                    <th>Acceptable Limit (BIS)</th>
-                    <th>Result</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>pH Value</strong></td>
-                    <td>7.2</td>
-                    <td>6.5 - 8.5</td>
-                    <td><span class="pass-tag">Normal</span></td>
-                </tr>
-                <tr>
-                    <td><strong>TDS (Total Dissolved Solids)</strong></td>
-                    <td>145 mg/L</td>
-                    <td>< 500 mg/L</td>
-                    <td><span class="pass-tag">Normal</span></td>
-                </tr>
-                <tr>
-                    <td><strong>Turbidity</strong></td>
-                    <td>0.1 NTU</td>
-                    <td>< 1 NTU</td>
-                    <td><span class="pass-tag">Clear</span></td>
-                </tr>
-                <tr>
-                    <td><strong>Calcium (as Ca)</strong></td>
-                    <td>22 mg/L</td>
-                    <td>< 75 mg/L</td>
-                    <td><span class="pass-tag">Normal</span></td>
-                </tr>
-                <tr>
-                    <td><strong>Magnesium (as Mg)</strong></td>
-                    <td>8.5 mg/L</td>
-                    <td>< 30 mg/L</td>
-                    <td><span class="pass-tag">Normal</span></td>
-                </tr>
-                <tr>
-                    <td><strong>Chloride (as Cl)</strong></td>
-                    <td>12 mg/L</td>
-                    <td>< 250 mg/L</td>
-                    <td><span class="pass-tag">Normal</span></td>
-                </tr>
-                <tr>
-                    <td><strong>E. Coli</strong></td>
-                    <td>Absent</td>
-                    <td>Absent</td>
-                    <td><span class="pass-tag">SAFE</span></td>
-                </tr>
-                <tr>
-                    <td><strong>Coliform Bacteria</strong></td>
-                    <td>Absent</td>
-                    <td>Absent</td>
-                    <td><span class="pass-tag">SAFE</span></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <p class="disclaimer">
-        *Sample tested at NABL Accredited Laboratory. Results apply to the sample tested. Storage conditions may affect parameters over time.
-    </p>
-
-    <a href="index.html" class="back-link">← Return to Website</a>
-</div>
 
 </body>
 </html>
