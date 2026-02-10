@@ -184,35 +184,39 @@
         </div>
 
         <!-- Product Visuals (UPDATED WITH IMAGES) -->
-        <div class="flex-1 h-[400px] lg:h-full flex items-end justify-center relative pb-12">
-            <div class="flex items-end gap-2.5">
-                <!-- 200ml (Left) -->
-                <div class="z-20 relative w-20 lg:w-[100px] transition-transform duration-500 hover:scale-105 hover:-translate-y-2.5">
+        <!-- Product Visuals (UPDATED: LARGER DESKTOP SIZES) -->
+        <div class="flex-1 h-[400px] lg:h-full flex items-end justify-center relative pb-12 lg:pb-24">
+            <!-- Increased gap to prevent overlapping on larger sizes -->
+            <div class="flex items-end gap-3 lg:gap-8"> 
+                
+                <!-- 200ml (Left) - Size increased to 160px on Desktop -->
+                <div class="z-20 relative w-20 lg:w-[160px] transition-transform duration-500 hover:scale-105 hover:-translate-y-2.5">
                     <img 
                         src="images/200mlpack.webp" 
-                        onerror="this.src='https://placehold.co/100x250/png?text=200ml'"
+                        onerror="this.src='https://placehold.co/160x400/png?text=200ml'"
                         alt="Freskey 200ml" 
                         fetchpriority="high"
                         class="w-full h-auto drop-shadow-2xl"
                     >
                 </div>
 
-                <!-- 500ml Slot (Using 1000ml image as requested) -->
-                <div class="z-30 relative w-24 lg:w-[120px] transition-transform duration-500 hover:scale-105 hover:-translate-y-2.5">
+                <!-- 500ml Slot (Center) - Size increased to 200px on Desktop -->
+                <!-- Uses 1000mlpack.webp as requested -->
+                <div class="z-30 relative w-24 lg:w-[200px] transition-transform duration-500 hover:scale-105 hover:-translate-y-2.5">
                     <img 
                         src="images/1000mlpack.webp" 
-                        onerror="this.src='https://placehold.co/120x350/png?text=500ml'"
+                        onerror="this.src='https://placehold.co/200x500/png?text=500ml'"
                         alt="Freskey 500ml" 
                         fetchpriority="high"
                         class="w-full h-auto drop-shadow-2xl"
                     >
                 </div>
 
-                <!-- 1 Litre (Right) -->
-                <div class="z-10 relative w-28 lg:w-[140px] transition-transform duration-500 hover:scale-105 hover:-translate-y-2.5">
+                <!-- 1 Litre (Right) - Size increased to 240px on Desktop -->
+                <div class="z-10 relative w-28 lg:w-[240px] transition-transform duration-500 hover:scale-105 hover:-translate-y-2.5">
                     <img 
                         src="images/1000mlpack.webp" 
-                        onerror="this.src='https://placehold.co/140x450/png?text=1Litre'"
+                        onerror="this.src='https://placehold.co/240x600/png?text=1Litre'"
                         alt="Freskey 1 Litre" 
                         fetchpriority="high"
                         class="w-full h-auto drop-shadow-2xl"
