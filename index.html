@@ -23,17 +23,27 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Tailwind Configuration -->
+    <!-- Tailwind Configuration (UPDATED COLOR PALETTE) -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
                         brand: {
-                            dark: '#0b2d46',    /* Deep Authority Blue */
-                            primary: '#008eb0', /* Vibrant Water Cyan */
-                            light: '#e6f6fa',   /* Very Light Wash */
-                            accent: '#7ab800',  /* Nature Green */
-                            'accent-hover': '#6a9e00',
+                            /* 1. DARK: Matches the Bottle Cap or Dark Text on Label */
+                            dark: '#002B5B',    /* Deep Royal Navy */
+                            
+                            /* 2. PRIMARY: Matches the Water Splash or Main Logo Color */
+                            primary: '#00A8E8', /* Vibrant Crystalline Cyan */
+                            
+                            /* 3. LIGHT: Very faint background tint (Ice) */
+                            light: '#EAFBFF',   /* Icy White */
+                            
+                            /* 4. ACCENT: Matches the Leaf/Nature symbol on label */
+                            accent: '#8FD14F',  /* Fresh Lime Green */
+                            
+                            /* Hover state for buttons */
+                            'accent-hover': '#76b03f',
                         }
                     },
                     fontFamily: {
@@ -41,7 +51,10 @@
                         body: ['Open Sans', 'sans-serif'],
                     },
                     boxShadow: {
-                        'hover': '0 15px 40px rgba(11, 45, 70, 0.15)',
+                        'hover': '0 20px 50px rgba(0, 168, 232, 0.15)', /* Blue glow shadow */
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "radial-gradient(circle at 50% 50%, #ffffff 0%, #EAFBFF 50%, #D6F4FF 100%)",
                     },
                     keyframes: {
                         float: {
