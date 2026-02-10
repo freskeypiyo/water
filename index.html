@@ -184,53 +184,25 @@
         </div>
 
         <!-- Product Visuals (UPDATED WITH IMAGES) -->
-      <!-- Product Visuals (UPDATED: Cropped & Tight Cluster) -->
-        <div class="flex-1 h-[400px] lg:h-full flex items-end justify-center relative pb-12 lg:pb-16">
+     <!-- Product Visuals (Single Combined Image) -->
+        <div class="flex-1 h-[400px] lg:h-full flex items-end justify-center relative pb-12 lg:pb-0">
             
-            <!-- Flex container with items aligned to bottom -->
-            <div class="flex items-end justify-center"> 
-                
-                <!-- 1. LEFT BOTTLE (200ml) -->
-                <!-- Container: Narrow width (w-32) to crop sides + Negative margin right (-mr-6) to pull close -->
-                <div class="z-20 relative overflow-hidden rounded-lg transition-transform duration-500 hover:scale-105 hover:-translate-y-2.5 
-                            w-20 h-48 lg:w-36 lg:h-[480px] lg:-mr-8">
-                    <img 
-                        src="images/200mlpack.webp" 
-                        onerror="this.src='https://placehold.co/200x500/png?text=200ml'"
-                        alt="Freskey 200ml" 
-                        fetchpriority="high"
-                        /* Object-cover fills height, cropping width. Object-center keeps bottle in middle */
-                        class="absolute inset-0 w-full h-full object-cover object-center"
-                    >
-                </div>
-
-                <!-- 2. CENTER BOTTLE (500ml/1000ml Image) -->
-                <!-- Container: Wider (w-52) & Taller (h-[580px]) + Z-30 to stay on top -->
-                <div class="z-30 relative overflow-hidden rounded-lg transition-transform duration-500 hover:scale-105 hover:-translate-y-2.5 shadow-2xl
-                            w-28 h-60 lg:w-52 lg:h-[580px]">
-                    <img 
-                        src="images/1000mlpack.webp" 
-                        onerror="this.src='https://placehold.co/300x600/png?text=500ml'"
-                        alt="Freskey 500ml" 
-                        fetchpriority="high"
-                        class="absolute inset-0 w-full h-full object-cover object-center"
-                    >
-                </div>
-
-                <!-- 3. RIGHT BOTTLE (1 Litre) -->
-                <!-- Container: Tall (h-[620px]) + Negative margin left (-ml-8) to pull close -->
-                <div class="z-20 relative overflow-hidden rounded-lg transition-transform duration-500 hover:scale-105 hover:-translate-y-2.5 
-                            w-32 h-72 lg:w-60 lg:h-[620px] lg:-ml-8">
-                    <img 
-                        src="images/1000mlpack.webp" 
-                        onerror="this.src='https://placehold.co/300x650/png?text=1Litre'"
-                        alt="Freskey 1 Litre" 
-                        fetchpriority="high"
-                        class="absolute inset-0 w-full h-full object-cover object-center "
-                    >
-                </div>
-
+            <!-- Container for the single image -->
+            <div class="relative z-10 transition-transform duration-500 hover:scale-105">
+                <img 
+                    src="images/allcombine.webp" 
+                    onerror="this.src='https://placehold.co/600x500/png?text=All+Bottles'" 
+                    alt="Freskey Water Range" 
+                    fetchpriority="high"
+                    /* 
+                       Mobile: h-[300px] (Fits nicely)
+                       Desktop: h-[550px] (Very large and prominent)
+                       object-contain: Ensures the image isn't cut off
+                    */
+                    class="w-auto h-[300px] sm:h-[350px] lg:h-[550px] object-contain drop-shadow-2xl"
+                >
             </div>
+
         </div>
     </section>
 
