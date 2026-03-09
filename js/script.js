@@ -7,7 +7,7 @@ window.addEventListener('load', () => {
     const splash = document.getElementById('splash-screen');
     // Ensure it shows for at least 1.5 seconds so users see the logo
     setTimeout(() => {
-        if(splash){
+        if (splash) {
             splash.style.opacity = '0';
             setTimeout(() => {
                 splash.style.display = 'none';
@@ -21,13 +21,13 @@ const hamburger = document.querySelector('.hamburger');
 const mobileNav = document.querySelector('.mobile-nav');
 const closeBtn = document.querySelector('.close-btn');
 
-if(hamburger) {
+if (hamburger) {
     hamburger.addEventListener('click', () => {
         mobileNav.classList.add('active');
     });
 }
 
-if(closeBtn) {
+if (closeBtn) {
     closeBtn.addEventListener('click', () => {
         mobileNav.classList.remove('active');
     });
@@ -63,14 +63,14 @@ function filterProd(cat, btnElement) {
         btn.classList.add('text-gray-500');
         btn.classList.remove("after:content-['']", "after:absolute", "after:bottom-0", "after:left-1/2", "after:-translate-x-1/2", "after:w-[30px]", "after:h-[3px]", "after:bg-brand-accent");
     });
-    
+
     // Add active style to clicked button
-    if(btnElement) {
+    if (btnElement) {
         btnElement.classList.remove('text-gray-500');
         btnElement.classList.add('text-brand-dark');
         btnElement.classList.add("after:content-['']", "after:absolute", "after:bottom-0", "after:left-1/2", "after:-translate-x-1/2", "after:w-[30px]", "after:h-[3px]", "after:bg-brand-accent");
     }
-    
+
     const products = document.querySelectorAll('.product-card');
     products.forEach(p => {
         if (cat === 'all') {
@@ -90,29 +90,40 @@ function filterProd(cat, btnElement) {
 
 // Set initial active state logic visually for first button
 document.addEventListener('DOMContentLoaded', () => {
-        const firstBtn = document.querySelector('.p-tab-btn');
-        if(firstBtn) {
-            firstBtn.classList.remove('text-gray-500');
-            firstBtn.classList.add('text-brand-dark');
-        }
+    const firstBtn = document.querySelector('.p-tab-btn');
+    if (firstBtn) {
+        firstBtn.classList.remove('text-gray-500');
+        firstBtn.classList.add('text-brand-dark');
+    }
 });
 
 
-// === 4. Simple Cart Logic ===
-let count = 0;
-function addToCart(qty) {
-    count += qty;
+// === 4. WhatsApp Order Logic ===
+let orderDetails = [];
+
+function addToCart(productName) {
+    orderDetails.push(productName);
     const badge = document.getElementById("cartCount");
-    badge.innerText = count;
+    badge.innerText = orderDetails.length;
     badge.classList.add("scale-150");
     setTimeout(() => { badge.classList.remove("scale-150"); }, 200);
-    alert("Added " + qty + " item(s) to simulated cart!");
 }
+
 function openCart() {
-    if(count === 0) {
-        alert("Your cart is empty! Get some water.");
+    if (orderDetails.length === 0) {
+        alert("Your cart is empty! Please add some water before ordering.");
     } else {
-        alert("Cart contains " + count + " items. Checkout process start.");
+        const phone = "917060607763";
+        const message = `Hello Freskey Team! I would like to order the following items from your website:\n\n` +
+            orderDetails.map((item, index) => `${index + 1}. ${item}`).join('\n') +
+            `\n\nPlease let me know the total and delivery details.`;
+
+        const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, '_blank');
+
+        // Reset Cart after sending them to WhatsApp
+        orderDetails = [];
+        document.getElementById("cartCount").innerText = "0";
     }
 }
 
@@ -121,8 +132,8 @@ function calculateWater() {
     const w = parseFloat(document.getElementById('calcWeight').value);
     const a = parseFloat(document.getElementById('calcActivity').value);
     const resBox = document.getElementById('hydration-result');
-    
-    if(!w) {
+
+    if (!w) {
         resBox.innerText = "Please enter weight.";
         return;
     }
@@ -200,7 +211,7 @@ function closeModal() {
 document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('detailsModal');
     if (modal) {
-        modal.addEventListener('click', function(e) {
+        modal.addEventListener('click', function (e) {
             if (e.target === this) {
                 closeModal();
             }
@@ -214,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function toggleAccordion(header) {
     const content = header.nextElementSibling;
     const span = header.querySelector('span');
-    
+
     if (content.style.maxHeight) {
         content.style.maxHeight = null;
         span.innerText = '+';
@@ -230,10 +241,10 @@ function handleForm(e) {
     const btn = e.target.querySelector('button');
     const initialText = btn.innerText;
     btn.innerText = "Sending...";
-    
+
     setTimeout(() => {
         const feedback = document.getElementById('form-feedback');
-        if(feedback) feedback.classList.remove('hidden');
+        if (feedback) feedback.classList.remove('hidden');
         e.target.reset();
         btn.innerText = "Sent!";
         setTimeout(() => { btn.innerText = initialText; }, 2000);
