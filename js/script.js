@@ -54,7 +54,93 @@ const observer = new IntersectionObserver((entries) => {
 });
 // (You can add class="hidden-anim" to elements you want to animate)
 
-// === 3. Tab Filter for Products ===
+// === NEW: Scroll To Top Button Logic ===
+const scrollTopBtn = document.getElementById('scrollTopBtn');
+if (scrollTopBtn) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+            scrollTopBtn.classList.add('visible');
+        } else {
+            scrollTopBtn.classList.remove('visible');
+        }
+    });
+    scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+
+// === NEW: Active Nav Link on Scroll ===
+document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('nav .nav-link');
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+                navLinks.forEach(link => {
+                    link.classList.remove('text-brand-accent', '!text-brand-accent');
+                    link.classList.add('text-brand-dark');
+                    if (link.getAttribute('data-section') === id) {
+                        link.classList.remove('text-brand-dark');
+                        link.classList.add('text-brand-accent');
+                        // also extend underline
+                        const span = link.querySelector('span');
+                        if (span) span.style.width = '100%';
+                    } else {
+                        const span = link.querySelector('span');
+                        if (span) span.style.width = '';
+                    }
+                });
+            }
+        });
+    }, { threshold: 0.3 });
+
+    sections.forEach(section => sectionObserver.observe(section));
+});
+
+// === NEW: Fade-in Animations on Scroll ===
+document.addEventListener('DOMContentLoaded', () => {
+    const fadeEls = document.querySelectorAll('.fade-in-up');
+    if (fadeEls.length > 0) {
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    fadeObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        fadeEls.forEach(el => fadeObserver.observe(el));
+    }
+});
+
+// === NEW: Toast Notification Helper (replaces alert) ===
+function showToast(msg) {
+    let toast = document.getElementById('freskey-toast');
+    if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'freskey-toast';
+        toast.style.cssText = `
+            position:fixed; bottom:84px; left:50%; transform:translateX(-50%) translateY(20px);
+            background:#042E2D; color:white; padding:12px 24px; border-radius:50px;
+            font-family:'Montserrat',sans-serif; font-weight:700; font-size:0.85rem;
+            z-index:9999; opacity:0; transition:opacity 0.3s, transform 0.3s;
+            white-space:nowrap; box-shadow:0 4px 16px rgba(0,0,0,0.2);
+        `;
+        document.body.appendChild(toast);
+    }
+    toast.textContent = msg;
+    toast.style.opacity = '1';
+    toast.style.transform = 'translateX(-50%) translateY(0)';
+    clearTimeout(toast._timer);
+    toast._timer = setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateX(-50%) translateY(20px)';
+    }, 2500);
+}
+
+
 function filterProd(cat, btnElement) {
     // Remove active style from all buttons
     const buttons = document.querySelectorAll('.p-tab-btn');
@@ -98,34 +184,29 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// === 4. WhatsApp Order Logic ===
-let orderDetails = [];
-
-function addToCart(productName) {
-    orderDetails.push(productName);
+// === 4. Simple Cart Logic ===
+let count = 0;
+function addToCart(qty) {
+    count += qty;
     const badge = document.getElementById("cartCount");
-    badge.innerText = orderDetails.length;
-    // Use inline style for animation since dynamically-added Tailwind classes aren't in compiled CSS
-    badge.style.transform = "scale(1.5)";
-    badge.style.transition = "transform 0.15s ease";
-    setTimeout(() => { badge.style.transform = "scale(1)"; }, 200);
+    badge.innerText = count;
+    badge.classList.add("scale-150");
+    setTimeout(() => { badge.classList.remove("scale-150"); }, 200);
+
+    // Show WhatsApp button after first item is added
+    const waBtn = document.getElementById('waCartBtn');
+    if (waBtn && count > 0) {
+        waBtn.classList.add('visible');
+    }
+
+    // Show a toast-style notification instead of blocking alert
+    showToast(`✅ Item added to cart! Total: ${count} item(s)`);
 }
-
 function openCart() {
-    if (orderDetails.length === 0) {
-        alert("Your cart is empty! Please add some water before ordering.");
+    if (count === 0) {
+        alert("Your cart is empty! Get some water.");
     } else {
-        const phone = "917060607763";
-        const message = `Hello Freskey Team! I would like to order the following items from your website:\n\n` +
-            orderDetails.map((item, index) => `${index + 1}. ${item}`).join('\n') +
-            `\n\nPlease let me know the total and delivery details.`;
-
-        const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-        window.open(whatsappUrl, '_blank');
-
-        // Reset Cart after sending them to WhatsApp
-        orderDetails = [];
-        document.getElementById("cartCount").innerText = "0";
+        alert("Cart contains " + count + " items. Checkout process start.");
     }
 }
 
