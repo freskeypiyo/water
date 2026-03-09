@@ -105,8 +105,10 @@ function addToCart(productName) {
     orderDetails.push(productName);
     const badge = document.getElementById("cartCount");
     badge.innerText = orderDetails.length;
-    badge.classList.add("scale-150");
-    setTimeout(() => { badge.classList.remove("scale-150"); }, 200);
+    // Use inline style for animation since dynamically-added Tailwind classes aren't in compiled CSS
+    badge.style.transform = "scale(1.5)";
+    badge.style.transition = "transform 0.15s ease";
+    setTimeout(() => { badge.style.transform = "scale(1)"; }, 200);
 }
 
 function openCart() {
