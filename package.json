@@ -1,0 +1,26 @@
+{
+  "name": "water",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "dev": "tailwindcss -i ./src_style.css -o ./style.css --watch",
+    "build": "tailwindcss -i ./src_style.css -o ./style.css --minify",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jatin12j/water.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/jatin12j/water/issues"
+  },
+  "homepage": "https://github.com/jatin12j/water#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}
